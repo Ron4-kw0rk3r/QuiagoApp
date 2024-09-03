@@ -1,0 +1,206 @@
+/* Responsive styles for Quiago web application */
+
+/* Base styles for all devices */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.quiago-content, .feature, .download-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Styles for desktop and larger screens */
+.quiago-nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.quiago-nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style-type: none;
+}
+
+.quiago-nav li {
+    margin: 0 10px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 600px) {
+    .quiago-nav ul {
+        display: none;
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .quiago-nav li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    .nav-toggle:focus {
+        outline: none;
+    }
+    
+    .quiago-nav.active ul {
+        display: flex;
+    }
+    
+    .quiago-container {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .quiago-logo {
+        width: 60px;
+    }
+    
+    .quiago-title {
+        font-size: 2.8rem;
+    }
+    
+    .quiago-description p {
+        font-size: 0.9rem;
+    }
+    
+    .feature {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    
+    h1, h2, h3 {
+        text-align: center;
+    }
+    
+    p {
+        text-align: justify;
+    }
+    
+    .app-store-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .quiago-footer {
+        text-align: center;
+        padding: 20px 10px;
+    }
+}
+
+/* Medium devices (tablets, 601px to 1024px) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .quiago-container {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .quiago-logo {
+        width: 80px;
+    }
+    
+    .quiago-title {
+        font-size: 2.2rem;
+    }
+    
+    .feature {
+        flex-basis: 45%;
+        margin-bottom: 30px;
+    }
+}
+
+/* Large devices (desktops, 1025px and up) */
+@media only screen and (min-width: 1025px) {
+    .quiago-container {
+        width: 80%;
+        max-width: 1200px;
+        padding: 20px;
+    }
+    
+    .quiago-logo {
+        width: 100px;
+    }
+    
+    .quiago-title {
+        font-size: 4.5rem;
+    }
+    
+    .feature {
+        flex-basis: 30%;
+    }
+}
+
+.app-store-button {
+    padding: 15px;
+    font-size: 1rem;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.quiago-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quiago-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.qr-code {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:focus, button:focus {
+    outline: 2px solid #007bff;
+}
+
+@media print {
+    .quiago-nav, .quiago-footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    .quiago-container {
+        width: 100%;
+    }
+}
+
+

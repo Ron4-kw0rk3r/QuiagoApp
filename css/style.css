@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.quiago-container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quiago-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    flex-direction: row;
+}
+
+.quiago-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 40%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.quiago-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #333;
+}
+
+.quiago-description {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5e6d3; /* Light beige background */
+}
+
+.quiago-nav {
+    background-color: #8b4513; /* Saddle brown */
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quiago-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.quiago-nav li {
+    margin: 0 1rem;
+}
+
+.quiago-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.quiago-nav a:hover {
+    color: #ffd700; /* Gold */
+}
+
+.quiago-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    background-color: #fff1cd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+section h2 {
+    color: #8b4513; /* Saddle brown */
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #ffd700; /* Gold */
+    padding-bottom: 0.5rem;
+}
+
+section p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.feature {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f5e6d3; /* Light beige */
+    border-radius: 8px;
+}
+
+.feature h3 {
+    color: #a0522d; /* Sienna */
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.feature ul {
+    padding-left: 1.5rem;
+    color: #555;
+}
+
+.quiago-downloads {
+    text-align: center;
+    background-color: #8b4513; /* Saddle brown */
+    color: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+}
+
+.download-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.app-store-button {
+    background-color: #ffd700; /* Gold */
+    color: #333;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.app-store-button:hover {
+    background-color: #fff;
+    color: #8b4513; /* Saddle brown */
+    transform: scale(1.05);
+}
+
+.qr-code img {
+    max-width: 150px;
+    margin-bottom: 0.5rem;
+    border: 4px solid #fff;
+    border-radius: 8px;
+}
+
+.quiago-footer {
+    background-color: #8b4513; /* Saddle brown */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+

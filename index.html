@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiago-web - Responsive web application">
+    <title>Quiago-web</title>
+    <link rel="icon" href="src/res/Quiagologodev.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="src/res/Quiagologodev.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    
+    
+    <script src="js/viewport-units-buggyfill.js"></script>
+    <script>window.viewportUnitsBuggyfill.init();</script>
+</head>
+
+
+<body>
+        <header class="quiago-header">
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </header>
+        <style>
+            .nav-toggle {
+                display: none; /* Hide by default for desktop */
+                background-color: #8b4513;
+                border: none;
+                color: #fff;
+                font-size: 1.5rem;
+                cursor: pointer;
+                padding: 10px;
+                border-radius: 5px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1000;
+            }
+            
+            .hamburger {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                position: relative;
+                transition: background-color 0.3s ease;
+            }
+            
+            .hamburger::before,
+            .hamburger::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+                transition: all 0.3s ease;
+            }
+            
+            .hamburger::before {
+                top: -8px;
+            }
+            
+            .hamburger::after {
+                bottom: -8px;
+            }
+            
+            .nav-toggle:hover {
+                background-color: #a0522d;
+            }
+
+            .quiago-nav {
+                background-color: #8b4513;
+                padding: 15px 0;
+            }
+
+            .quiago-nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .quiago-nav ul li {
+                margin: 0 15px;
+            }
+
+            .quiago-nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.1rem;
+            }
+
+            @media only screen and (max-width: 768px) {
+                .nav-toggle {
+                    display: block; /* Show for mobile */
+                }
+
+                .quiago-nav {
+                    display: none;
+                }
+
+                .quiago-nav.active {
+                    display: block;
+                    position: absolute;
+                    top: 60px;
+                    right: 0;
+                    width: 200px;
+                    border-radius: 5px;
+                }
+
+                .quiago-nav.active ul {
+                    flex-direction: column;
+                }
+
+                .quiago-nav.active ul li {
+                    margin-bottom: 10px;
+                }
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const navToggle = document.querySelector('.nav-toggle');
+                const nav = document.querySelector('.quiago-nav');
+
+                navToggle.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+            });
+        </script>
+
+
+
+
+
+
+        <nav class="quiago-nav">
+            <ul>
+                <li><a href="#sobre-quiago">QuiagoApp</a></li>
+                <li><a href="#Novedades" > Novedades</a></li>
+                <li><a href="#token-kircho">TokenKircho</a></li>
+                <li><a href="#descargas">Descargas</a></li>
+                <li><a href="templates/about.html">SobreQg</a></li>
+                
+            </ul>
+        </nav>
+    
+    <div class="quiago-container">
+        <div class="quiago-header">
+            <img src="src/res/logoOficialQuiago.jpg" alt="Quiago Logo" class="quiago-logo">
+            <h1 class="quiago-title">Quiago</h1>
+        </div>
+        <div class="quiago-description">
+            <p>¿A dónde voy? ¿Qué hago? ¿por donde voy? Quiago: tu compañero de viaje descubre mas lugares en Bolivia.</p>
+        </div>
+    </div>
+
+    <main class="quiago-content">
+        <section id="sobre-quiago">
+            <h2>Quiago</h2>
+            <p>Quiago una innovadora aplicación móvil multiplataforma que te ayuda a descubrir tu viaje, propósito y destino. Conecta con tu recorrido, presente y futuro de una manera única y emocionante.</p>
+        </section>
+        
+        <section id="Aspectos Tecnicos Quiagos">
+            <h2>Características Técnicas</h2>
+            <div class="feature">
+                <h3>Modo Sin Conexión</h3>
+                <p>Quiago está diseñado para funcionar incluso cuando no tienes acceso a Internet. Algunas de las características del modo sin conexión incluyen:</p>
+                <ul>
+                    <li>Acceso a tu perfil y datos personales guardados localmente</li>
+                    <li>Conexion de Mapa limitado, Quiago te permite conectarte y reconocer ciertas areas cuales ya se tenga agregadas. </li> 
+            
+                    <li>Sincronización automática de datos cuando se restablece la conexión</li>
+                </ul>
+
+
+                <h3> No te quedes sin conexion </h3>
+                <p>No te quedes fuera Quiago te muestra puntos de accesos gratuitos de puntos wifi libres en donde te podes conectarte sin problemas</p>
+                <ul>
+
+                    <li> Acceso Gratuito a puntos de Internte </li>
+                    <li> Recorre las conexiones que ofrece el pais libremente </li> 
+
+                </ul>
+            </div>
+            <div class="feature">
+                <h3>Almacenamiento Local</h3>
+                <p>Guardando tus datos directamente en tu dispositivo, así puedes acceder a ellos en cualquier momento, incluso cuando no tengas Internet.</p>
+            </div>
+            <div class="feature">
+                <h3>Captura tus Momentos</h3>
+                <p>Captura el momento y con Quiago recrealo para explorar mas lugares cerca de donde te encuentres, construye mas lugares y descubre sitios en donde tu los recrees</p>
+            </div>
+        </section>
+        
+        <section id="token-kircho">
+            <h2>TokenKircho</h2>
+            <p>TokenKircho es nuestra criptomoneda exclusiva que potencia el ecosistema Quiago. Obtén recompensas, accede a funciones premium y forma parte de nuestra comunidad global.</p>
+        </section>
+
+        <section id="descargas" class="quiago-downloads">
+            <h2>Descargas</h2>
+            <div class="download-options">
+                <a href="#" class="app-store-button">Descargar en App Store</a>
+                <div class="qr-code">
+                    <img src="src/res/quiago-qr.png" alt="Código QR de Quiago">
+                    <p>Escanea para descargar</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="quiago-footer">
+        <p>&copy; 2024 Quiagoapp. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
