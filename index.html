@@ -434,7 +434,49 @@
         <section id="token-kircho">
             <h2>TokenKircho</h2>
             <p>TokenKircho es nuestra criptomoneda exclusiva que potencia el ecosistema Quiago. Obtén recompensas, accede a funciones premium y forma parte de nuestra comunidad global.</p>
-        
+            <div class="token-coins">
+                <div class="coin coin1"></div>
+                <div class="coin coin2"></div>
+                <div class="coin coin3"></div>
+            </div>
+            <style>
+                .token-coins {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100px;
+                    margin: 20px 0;
+                }
+                .coin {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background: linear-gradient(45deg, #FFD700, #FFA500);
+                    border: 2px solid #B8860B;
+                    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                    position: relative;
+                    margin: 0 10px;
+                }
+                .coin::before {
+                    content: "K";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #B8860B;
+                }
+                .coin1 {
+                    transform: rotate(-15deg);
+                }
+                .coin2 {
+                    transform: scale(1.1);
+                }
+                .coin3 {
+                    transform: rotate(15deg);
+                }
+            </style>
             <div class="token-kircho-button">
                 <a href="kirchocoin.html" class="kircho-btn">Explora TokenKircho</a>
             </div>
@@ -444,13 +486,137 @@
         <section id="descargas" class="quiago-downloads">
             <h2>Descargas</h2>
             <div class="download-options">
-                <a href="#" class="app-store-button">Descargar en App Store</a>
-                <div class="qr-code">
-                    <img src="src/res/quiago-qr.png" alt="Código QR de Quiago">
-                    <p>Escanea para descargar</p>
+                <div class="mobile-device">
+                    <div class="screen">
+                        <img src="src/res/COINKIRCHO.jpg" alt="Quiago Logo" class="screen-logo">
+                    </div>
+                    <div class="home-button"></div>
+                </div>
+                <div class="coins-container">
+                    <div class="coin coin1"></div>
+                    <div class="coin coin2"></div>
+                    <div class="coin coin3"></div>
+                </div>
+                <div class="download-buttons">
+                    <a href="#" class="app-store-button"><i class="fas fa-apple"></i> Descargar en App Store</a>
+                    <a href="https://github.com/Ron4-kw0rk3r/QuiagoApp" class="play-store-button"><i class="fab fa-android"></i> Próximamente en Android</a>
                 </div>
             </div>
         </section>
+        <style>
+            .quiago-downloads {
+                padding: 40px 20px;
+                background-color: #fff1cd;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .download-options {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 30px;
+            }
+            .mobile-device {
+                width: 200px;
+                height: 400px;
+                background-color: #15212f;
+                border-radius: 30px;
+                position: relative;
+                box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+                transform: rotate(-15deg);
+            }
+            .screen {
+                width: 180px;
+                height: 320px;
+                background-color: #ffffff;
+                position: absolute;
+                top: 40px;
+                left: 10px;
+                border-radius: 5px;
+                border: 2px solid #8b4513;
+                overflow: hidden;
+            }
+            .screen-logo {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                padding: 8px;
+            }
+            .home-button {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #ffffff;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .coins-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-left: 20px;
+            }
+            .coin {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #FFD700, #FFA500);
+                border: 2px solid #B8860B;
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                position: relative;
+                margin: 10px 0;
+            }
+            .coin::before {
+                content: "KC";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+                font-weight: bold;
+                color: #B8860B;
+            }
+            .coin1 {
+                transform: rotate(-15deg);
+            }
+            .coin2 {
+                transform: scale(1.1);
+            }
+            .coin3 {
+                transform: rotate(15deg);
+            }
+            .download-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            
+            .app-store-button, .play-store-button {
+                padding: 15px 30px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: bold;
+                text-align: center;
+                transition: all 0.3s ease;
+                color: #8b4513;
+            }
+            .app-store-button {
+                background-color: #e8c244;
+            }
+            .play-store-button {
+                background-color: #e8c244;
+            }
+            .app-store-button:hover, .play-store-button:hover {
+                opacity: 0.8;
+            }
+            .app-store-button i, .play-store-button i {
+                margin-right: 10px;
+            }
+        </style>
     </main>
 
     <footer class="quiago-footer">

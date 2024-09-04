@@ -1,89 +1,627 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiago-web - Responsive web application">
+    <title>Quiago-web</title>
+    <link rel="icon" href="src/res/Quiagologodev.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="src/res/Quiagologodev.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/buttom.css">
+    <link rel="stylesheet" href="styles/iphonecss.css">
+    
+    
+    
+    <script src="js/viewport-units-buggyfill.js"></script>
+    <script>window.viewportUnitsBuggyfill.init();</script>
+</head>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.13.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.13.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.13.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+        <header class="quiago-header">
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </header>
+        <style>
+            .nav-toggle {
+                display: none; /* Hide by default for desktop */
+                background-color: #8b4513;
+                border: none;
+                color: #fff;
+                font-size: 1.5rem;
+                cursor: pointer;
+                padding: 10px;
+                border-radius: 5px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1000;
+            }
+            
+            .hamburger {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                position: relative;
+                transition: background-color 0.3s ease;
+            }
+            
+            .hamburger::before,
+            .hamburger::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+                transition: all 0.3s ease;
+            }
+            
+            .hamburger::before {
+                top: -8px;
+            }
+            
+            .hamburger::after {
+                bottom: -8px;
+            }
+            
+            .nav-toggle:hover {
+                background-color: #a0522d;
+            }
+
+            .quiago-nav {
+                background-color: #8b4513;
+                padding: 15px 0;
+            }
+
+            .quiago-nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .quiago-nav ul li {
+                margin: 0 15px;
+            }
+
+            .quiago-nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.1rem;
+            }
+
+            @media only screen and (max-width: 768px) {
+                .nav-toggle {
+                    display: block; /* Show for mobile */
+                }
+
+                .quiago-nav {
+                    display: none;
+                }
+
+                .quiago-nav.active {
+                    display: block;
+                    position: absolute;
+                    top: 60px;
+                    right: 0;
+                    width: 200px;
+                    border-radius: 5px;
+                }
+
+                .quiago-nav.active ul {
+                    flex-direction: column;
+                }
+
+                .quiago-nav.active ul li {
+                    margin-bottom: 10px;
+                }
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const navToggle = document.querySelector('.nav-toggle');
+                const nav = document.querySelector('.quiago-nav');
+
+                navToggle.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+            });
+        </script>
+
+
+
+
+
+
+        <nav class="quiago-nav">
+            <ul>
+                <li><a href="#sobre-quiago">QuiagoApp</a></li>
+                <li><a href="#Novedades" > Novedades</a></li>
+                <li><a href="#token-kircho">TokenKircho</a></li>
+                <li><a href="#descargas">Descargas</a></li>
+                <li><a href="templates/about.html">SobreQg</a></li>
+                
+            </ul>
+        </nav>
+    
+    <div class="quiago-container">
+        <div class="quiago-header">
+            <img src="src/res/logoOficialQuiago.jpg" alt="Quiago Logo" class="quiago-logo">
+            <h1 class="quiago-title">Quiago</h1>
+        </div>
+        <div class="quiago-description">
+            <p>¿A dónde voy? ¿Qué hago? ¿por donde voy? Quiago: tu compañero de viaje descubre mas lugares en Bolivia.</p>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <main class="quiago-content">
+        <section id="sobre-quiago" class="quiago-info">
+            <div class="quiago-info-content">
+                <h2>Quiago</h2>
+                <p>Quiago es una innovadora aplicación móvil multiplataforma que te ayuda a descubrir tu viaje, propósito y destino. Conecta con tu recorrido, presente y futuro de una manera única y emocionante.</p>
+                <div class="descubrir-container">
+                    <button class="descubrir-btn" onclick="location.href='templates/about.html'">Descubrir más</button>
+                </div>
+            </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+            <style>
+                .descubrir-container {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                .descubrir-btn {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #8b4513;
+                    color: #fff;
+                    text-decoration: none;
+                    border: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+                .descubrir-btn:hover {
+                    background-color: #a0522d;
+                }
+            </style>
+            <div class="quiago-info-image">
+                <div class="iphone iphone-black">
+                    <div class="iphone-frame">
+                        <div class="iphone-screen">
+                            <img src="src/res/logoOficialQuiago.jpg" alt="Quiago App Screenshot" class="app-screenshot" style="width: 100%; height: 50%; border-radius: 50%; padding-top: 20px;">
+                            <p class="app-text" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold; color: #000000;">Quiago</p>
+                            <p class="texto-app2" style="font-family: 'Arial', sans-serif; font-size: 18px; color: #333;">Recrea tus momentos</p>
+
+                        </div>
+                        <div class="iphone-home-button"></div>
+                    </div>
+                </div>
+                <div class="iphone iphone-white">
+                    <div class="iphone-frame">
+                        <div class="iphone-screen">
+                            <img src="src/res/logoOficialQuiago.jpg" alt="Quiago App Screenshot" class="app-screenshot" style="width: 100%; height: 50%; border-radius: 50%; padding-top: 20px;">
+                            <p class="app-text" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold; color: #000000;">Quiago</p>
+                            <p class="texto-app2" style="font-family: 'Arial', sans-serif; font-size: 18px; color: #333;">Descubre nuevos lugares</p>
+
+                        </div>
+                        <div class="iphone-home-button"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section id="Aspectos Tecnicos Quiagos">
+            <div class="tech-icons">
+                <img src="https://img.icons8.com/color/48/000000/wifi--v1.png" alt="Wi-Fi Icon" title="Modo Sin Conexión">
+                <img src="https://img.icons8.com/color/48/000000/database-restore.png" alt="Database Icon" title="Almacenamiento Local">
+                <img src="https://img.icons8.com/color/48/000000/camera.png" alt="Camera Icon" title="Captura tus Momentos">
+                <img src="https://img.icons8.com/color/48/000000/map-marker.png" alt="Map Marker Icon" title="Explora Lugares">
+            </div>
+            <style>
+                .tech-icons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                    margin-bottom: 20px;
+                }
+                .tech-icons img {
+                    width: 48px;
+                    height: 48px;
+                    transition: transform 0.3s ease;
+                }
+                .tech-icons img:hover {
+                    transform: scale(1.2);
+                }
+            </style>
+            <h2>Características Técnicas</h2>
+            <div class="feature">
+                <h3><img src="https://img.icons8.com/color/48/000000/wifi--v1.png" alt="Wi-Fi Icon" style="width: 36px; height: 36px; vertical-align: middle; margin-right: 10px;">Modo Sin Conexión</h3>
+                <p>Quiago está diseñado para funcionar incluso cuando no tienes acceso a Internet. Algunas de las características del modo sin conexión incluyen:</p>
+                <ul>
+                    <li>Acceso a tu perfil y datos personales guardados localmente</li>
+                    <li>Conexion de Mapa limitado, Quiago te permite conectarte y reconocer ciertas areas cuales ya se tenga agregadas. </li> 
+            
+                    <li>Sincronización automática de datos cuando se restablece la conexión</li>
+                </ul>
+
+
+                <h3><img src="https://img.icons8.com/color/48/000000/wifi--v1.png" alt="Wi-Fi Icon" style="width: 36px; height: 36px; vertical-align: middle; margin-right: 10px;"> No te quedes sin conexion </h3>
+                <p>No te quedes fuera Quiago te muestra puntos de accesos gratuitos de puntos wifi libres en donde te podes conectarte sin problemas</p>
+                <ul>
+
+                    <li> Acceso Gratuito a puntos de Internte </li>
+                    <li> Recorre las conexiones que ofrece el pais libremente </li> 
+
+                </ul>
+            </div>
+            <div class="feature">
+                <h3><img src="https://img.icons8.com/color/48/000000/database-restore.png" alt="Database Icon" style="width: 36px; height: 36px; vertical-align: middle; margin-right: 10px;">Almacenamiento Local</h3>
+                <p>Guardando tus datos directamente en tu dispositivo, así puedes acceder a ellos en cualquier momento, incluso cuando no tengas Internet.</p>
+            </div>
+            <div class="feature">
+                <h3><img src="https://img.icons8.com/color/48/000000/camera.png" alt="Camera Icon" style="width: 36px; height: 36px; vertical-align: middle; margin-right: 10px;">Captura tus Momentos</h3>
+                <p>Captura el momento y con Quiago recrealo para explorar más lugares cerca de donde te encuentres. Construye más lugares y descubre sitios en donde tú los recrees.</p>
+                <div class="capture-recreate">
+                    <div class="bolivia-map">
+                        <div class="street horizontal-1"></div>
+                        <div class="street horizontal-2"></div>
+                        <div class="street horizontal-3"></div>
+                        <div class="street vertical-1"></div>
+                        <div class="street vertical-2"></div>
+                        <div class="street diagonal-1"></div>
+                        <div class="street diagonal-2"></div>
+                        <div class="plaza"></div>
+                        <div class="map-marker" title="Plaza del Centro"></div>
+                        <div class="point point-1"></div>
+                        <div class="point point-2"></div>
+                        <div class="point point-3"></div>
+                        <div class="point point-4"></div>
+                        <div class="point point-5"></div>
+                        <div class="point point-6"></div>
+                    </div>
+                    <style>
+                        .bolivia-map {
+                            width: 400px;
+                            height: 400px;
+                            background-color: #e0e0e0;
+                            position: relative;
+                            border: 2px solid #9e9e9e;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            margin: 20px auto;
+                        }
+                        .street {
+                            position: absolute;
+                            background-color: #bdbdbd;
+                        }
+                        .horizontal-1, .horizontal-2, .horizontal-3 {
+                            width: 100%;
+                            height: 15px;
+                        }
+                        .horizontal-1 { top: 25%; transform: rotate(-5deg); }
+                        .horizontal-2 { top: 50%; }
+                        .horizontal-3 { top: 75%; transform: rotate(5deg); }
+                        .vertical-1, .vertical-2 {
+                            width: 15px;
+                            height: 100%;
+                        }
+                        .vertical-1 { left: 30%; transform: rotate(5deg); }
+                        .vertical-2 { right: 30%; transform: rotate(-5deg); }
+                        .diagonal-1, .diagonal-2 {
+                            width: 20px;
+                            height: 120%;
+                            transform-origin: top left;
+                        }
+                        .diagonal-1 { 
+                            transform: rotate(45deg);
+                            top: 0;
+                            left: 0;
+                        }
+                        .diagonal-2 { 
+                            transform: rotate(-45deg);
+                            top: 0;
+                            right: 0;
+                        }
+                        .plaza {
+                            position: absolute;
+                            top: 70%;
+                            left: 70%;
+                            width: 80px;
+                            height: 80px;
+                            background-color: #81c784;
+                            transform: translate(-50%, -50%) rotate(45deg);
+                            border-radius: 10px;
+                        }
+                        .map-marker {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 20px;
+                            height: 20px;
+                            background-color: #f44336;
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            cursor: pointer;
+                            box-shadow: 0 0 0 4px rgba(244, 67, 54, 0.4);
+                            animation: pulse 2s infinite;
+                        }
+                        .point {
+                            position: absolute;
+                            width: 12px;
+                            height: 12px;
+                            background-color: #2196f3;
+                            border-radius: 50%;
+                            cursor: pointer;
+                        }
+                        
+                        .point-4 { bottom: 10%; right: 32%; }
+                        .point-5 { top: 40%; left: 15%; }
+                        .point-6 { bottom: 30%; right: 25%; }
+                        @keyframes pulse {
+                            0% {
+                                box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4);
+                            }
+                            70% {
+                                box-shadow: 0 0 0 10px rgba(244, 67, 54, 0);
+                            }
+                            100% {
+                                box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+                            }
+                        }
+                    </style>
+                    <div class="recreation-points">
+                        <div class="point point-3" title="Punto de recreación 3"></div>
+                        <svg class="connections" width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none;">
+                            <line x1="80%" y1="40%" x2="10%" y2="20%" stroke="#FF5722" stroke-width="2" stroke-dasharray="5,5" />
+                            <line x1="80%" y1="40%" x2="25%" y2="70%" stroke="#FF5722" stroke-width="2" stroke-dasharray="5,5" />
+                            <line x1="80%" y1="40%" x2="60%" y2="10%" stroke="#FF5722" stroke-width="2" stroke-dasharray="5,5" />
+                            <line x1="80%" y1="40%" x2="70%" y2="80%" stroke="#FF5722" stroke-width="2" stroke-dasharray="5,5" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .capture-recreate {
+                    position: relative;
+                    width: 100%;
+                    height: 400px;
+                    margin: 40px 0;
+                    overflow: hidden;
+                }
+                .map-background {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .recreation-points {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                .point {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-color: #FF5722;
+                    border-radius: 50%;
+                    box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+                    cursor: pointer;
+                    transition: transform 0.3s ease;
+                }
+                .point:hover {
+                    transform: scale(1.2);
+                }
+                .point-1 { top: 20%; left: 10%; }
+                .point-2 { top: 70%; left: 25%; }
+                .point-3 { top: 40%; left: 80%; }
+                .point-4 { top: 10%; left: 60%; }
+                .point-5 { top: 80%; left: 70%; }
+            </style>
+            </div>
+
+
+
+        </section>
+        <section id="token-kircho">
+            <h2>TokenKircho</h2>
+            <p>TokenKircho es nuestra criptomoneda exclusiva que potencia el ecosistema Quiago. Obtén recompensas, accede a funciones premium y forma parte de nuestra comunidad global.</p>
+            <div class="token-coins">
+                <div class="coin coin1"></div>
+                <div class="coin coin2"></div>
+                <div class="coin coin3"></div>
+            </div>
+            <style>
+                .token-coins {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100px;
+                    margin: 20px 0;
+                }
+                .coin {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background: linear-gradient(45deg, #FFD700, #FFA500);
+                    border: 2px solid #B8860B;
+                    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                    position: relative;
+                    margin: 0 10px;
+                }
+                .coin::before {
+                    content: "K";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #B8860B;
+                }
+                .coin1 {
+                    transform: rotate(-15deg);
+                }
+                .coin2 {
+                    transform: scale(1.1);
+                }
+                .coin3 {
+                    transform: rotate(15deg);
+                }
+            </style>
+            <div class="token-kircho-button">
+                <a href="kirchocoin.html" class="kircho-btn">Explora TokenKircho</a>
+            </div>
+  
+        </section>
+
+        <section id="descargas" class="quiago-downloads">
+            <h2>Descargas</h2>
+            <div class="download-options">
+                <div class="mobile-device">
+                    <div class="screen">
+                        <img src="src/res/COINKIRCHO.jpg" alt="Quiago Logo" class="screen-logo">
+                    </div>
+                    <div class="home-button"></div>
+                </div>
+                <div class="coins-container">
+                    <div class="coin coin1"></div>
+                    <div class="coin coin2"></div>
+                    <div class="coin coin3"></div>
+                </div>
+                <div class="download-buttons">
+                    <a href="#" class="app-store-button"><i class="fas fa-apple"></i> Descargar en App Store</a>
+                    <a href="https://github.com/Ron4-kw0rk3r/QuiagoApp" class="play-store-button"><i class="fab fa-android"></i> Próximamente en Android</a>
+                </div>
+            </div>
+        </section>
+        <style>
+            .quiago-downloads {
+                padding: 40px 20px;
+                background-color: #fff1cd;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .download-options {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 30px;
+            }
+            .mobile-device {
+                width: 200px;
+                height: 400px;
+                background-color: #15212f;
+                border-radius: 30px;
+                position: relative;
+                box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+                transform: rotate(-15deg);
+            }
+            .screen {
+                width: 180px;
+                height: 320px;
+                background-color: #ffffff;
+                position: absolute;
+                top: 40px;
+                left: 10px;
+                border-radius: 5px;
+                border: 2px solid #8b4513;
+                overflow: hidden;
+            }
+            .screen-logo {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                padding: 8px;
+            }
+            .home-button {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #ffffff;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .coins-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-left: 20px;
+            }
+            .coin {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #FFD700, #FFA500);
+                border: 2px solid #B8860B;
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                position: relative;
+                margin: 10px 0;
+            }
+            .coin::before {
+                content: "KC";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+                font-weight: bold;
+                color: #B8860B;
+            }
+            .coin1 {
+                transform: rotate(-15deg);
+            }
+            .coin2 {
+                transform: scale(1.1);
+            }
+            .coin3 {
+                transform: rotate(15deg);
+            }
+            .download-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            
+            .app-store-button, .play-store-button {
+                padding: 15px 30px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: bold;
+                text-align: center;
+                transition: all 0.3s ease;
+                color: #8b4513;
+            }
+            .app-store-button {
+                background-color: #e8c244;
+            }
+            .play-store-button {
+                background-color: #e8c244;
+            }
+            .app-store-button:hover, .play-store-button:hover {
+                opacity: 0.8;
+            }
+            .app-store-button i, .play-store-button i {
+                margin-right: 10px;
+            }
+        </style>
+    </main>
+
+    <footer class="quiago-footer">
+        <p>&copy; 2024 Quiagoapp. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
 </html>

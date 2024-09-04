@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DescargaQuiago</title>
+</head>
+<body>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFD0;
+    }
+    header {
+        background-color: #8b4513;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+    }
+    main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    h1, h2 {
+        color: #8b4513;
+    }
+    .download-section {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .download-section:hover {
+        transform: translateY(-5px);
+    }
+    .github-link {
+        display: inline-block;
+        background-color: #8b4513;
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 25px;
+        margin-top: 20px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    .github-link:hover {
+        background-color: #a0522d;
+        transform: scale(1.05);
+    }
+    .app-icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .platform-icon {
+        font-size: 2em;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+</style>
+
+<header>
+    <img src="../src/res/logoOficialQuiago.jpg" alt="Quiago Logo" class="app-icon">
+    <h1>Descarga Quiago</h1>
+</header>
+
+<main>
+    <section class="download-section">
+        <h2><i class="fab fa-react platform-icon"></i>Desarrollo en React Native</h2>
+        <p>Quiago ha sido desarrollado utilizando React Native, una poderosa plataforma que nos permite crear aplicaciones móviles multiplataforma con un rendimiento nativo. Nuestra aplicación combina la flexibilidad de React con la potencia de las plataformas nativas.</p>
+    </section>
+
+    <section class="download-section">
+        <h2><i class="fab fa-apple platform-icon"></i>Disponible para iOS</h2>
+        <p>Actualmente, Quiago está disponible para dispositivos iOS. Hemos trabajado arduamente para optimizar la experiencia en Swift, asegurando un rendimiento fluido y una interfaz intuitiva para los usuarios de iPhone. Disfruta de una navegación suave y descubre nuevos lugares en Bolivia con facilidad.</p>
+    </section>
+
+    <section class="download-section">
+        <h2><i class="fab fa-android platform-icon"></i>Próximamente en Android</h2>
+        <p>¡Buenas noticias para los usuarios de Android! Estamos trabajando diligentemente para traer Quiago a tu dispositivo favorito. Pronto podrás explorar Bolivia y planificar tus aventuras con Quiago en cualquier smartphone Android. ¡Mantente atento a nuestras actualizaciones!</p>
+    </section>
+
+    <section class="download-section">
+        <h2><i class="fab fa-github platform-icon"></i>Más información en GitHub</h2>
+        <p>Para los entusiastas de la tecnología y desarrolladores curiosos, hemos abierto nuestro código en GitHub. Aquí encontrarás detalles técnicos, actualizaciones de desarrollo y podrás seguir de cerca la evolución de Quiago.</p>
+        <a href="https://github.com/tuusuario/quiago" class="github-link" target="_blank">Explora Quiago en GitHub</a>
+    </section>
+</main>
+
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>
