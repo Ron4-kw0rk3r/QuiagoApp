@@ -1,0 +1,17 @@
+.token-kircho-button {
+    text-align: center;
+    margin-top: 20px;
+}
+.kircho-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8b4513;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.kircho-btn:hover {
+    background-color: #a0522d;
+}

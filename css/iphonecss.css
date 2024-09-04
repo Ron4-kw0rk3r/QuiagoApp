@@ -1,0 +1,119 @@
+
+.quiago-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    overflow: hidden;
+}
+.quiago-info-content {
+    flex: 1;
+    padding-right: 40px;
+    text-align: left;
+}
+.quiago-info-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 600px;
+}
+.iphone {
+    width: 250px;
+    height: 500px;
+    background-color: #f4f4f4;
+    border-radius: 40px;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform: rotate(15deg);
+    transition: all 0.3s ease;
+}
+.iphone-black {
+    background-color: #000000;
+    right: 30px;
+    z-index: 2;
+}
+.iphone-white {
+    background-color: #000000;
+    right: 240px;
+    z-index: 1;
+}
+.iphone-frame {
+    width: 230px;
+    height: 480px;
+    background-color: #fff;
+    border-radius: 35px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    overflow: hidden;
+}
+.iphone-black .iphone-frame {
+    background-color: #000000;
+}
+.iphone-screen {
+    width: 210px;
+    height: 370px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.app-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.app-text {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.texto-app2 {
+    position: absolute;
+    bottom: 20px; /* Changed from 20px to 50px to avoid overlapping */
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+
+.iphone-home-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.iphone-black .iphone-home-button {
+    border-color: #333;
+}
+@media (max-width: 768px) {
+    .quiago-info {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .quiago-info-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .quiago-info-image {
+        transform: scale(0.7);
+        height: 400px;
+    }
+}
